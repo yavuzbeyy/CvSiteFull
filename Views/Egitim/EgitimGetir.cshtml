@@ -1,0 +1,35 @@
+﻿@model MyWebCv.Models.Entity.Education_Table
+
+@{
+    ViewBag.Title = "EgitimGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h4>Eğitim Düzenleme Sayfası</h4>
+<br />
+
+<form method="post">
+    @Html.Label("Üniversite Adı")
+    @Html.TextBoxFor(x => x.Header, new { @class = "form-control" })
+    <br />
+    @Html.Label("Şehir Adı")
+    @Html.TextBoxFor(x => x.SecondHeader, new { @class = "form-control" })
+    <br />
+    @Html.Label("Bölüm")
+    @Html.TextBoxFor(x => x.LastHeader, new { @class = "form-control" })
+    <br />
+    @Html.Label("Genel Not Ortalaması")
+    @Html.TextBoxFor(x => x.GNO, new { @class = "form-control" })
+    <br />
+    @Html.Label("Tarih")
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    <br />
+
+
+
+    <button class="btn btn-info">Güncelleme</button>
+</form>
+
+
+

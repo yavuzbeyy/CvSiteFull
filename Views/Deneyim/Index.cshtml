@@ -1,0 +1,41 @@
+﻿@using MyWebCv.Models.Entity
+@model List<Experiences_Table>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+</br> 
+
+<h2>Deneyim Listesi</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Baslik</th>
+        <th>AltBaslik</th>
+        <th>Aciklama</th>
+        <th>Tarih</th>
+        <th>Düzenle</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (var items in Model)
+    {
+
+<tr>
+    <td>@items.ID</td>
+    <td>@items.Header</td>
+    <td>@items.SecondHeader</td>
+    <td>@items.Explanation</td>
+    <td>@items.Date</td>
+    <td><a href="/Deneyim/DeneyimGetir/@items.ID" class="btn btn-success">Düzenle</a></td>
+    <td><a href="/Deneyim/DeneyimSil/@items.ID" class="btn btn-danger">Sil</a></td>
+</tr>
+
+    }
+
+
+
+</table>
+<a href="/Deneyim/DeneyimEkle/" class="btn btn-dark">Yeni Deneyim Ekle</a>

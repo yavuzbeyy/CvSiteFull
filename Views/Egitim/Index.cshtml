@@ -1,0 +1,43 @@
+﻿@using MyWebCv.Models.Entity
+@model List<Education_Table>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+</br>
+
+<h2>Eğitim Listesi</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Baslik</th>
+        <th>AltBaslik</th>
+        <th>Aciklama</th>
+        <th>GNO</th>
+        <th>Tarih</th>
+        <th>Düzenle</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (var items in Model)
+    {
+
+        <tr>
+            <td>@items.ID</td>
+            <td>@items.Header</td>
+            <td>@items.SecondHeader</td>
+            <td>@items.LastHeader</td>
+            <td>@items.GNO</td>
+            <td>@items.Date</td>
+            <td><a href="/Egitim/EgitimGetir/@items.ID" class="btn btn-success">Düzenle</a></td>
+            <td><a href="/Egitim/EgitimSil/@items.ID" class="btn btn-danger">Sil</a></td>
+        </tr>
+
+    }
+    
+
+</table>
+<a href="/Egitim/EgitimEkle/" class="btn btn-dark">Yeni Egitim Ekle</a>
+

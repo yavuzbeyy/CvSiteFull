@@ -1,0 +1,33 @@
+﻿@using MyWebCv.Models.Entity
+@model List<Skills_Table>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Yetenek Listesi</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Yetenek Adı</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (var a in Model)
+    {
+
+        <tr>
+            <td>@a.ID</td>
+            <td>@a.Skills</td>
+            <td><a href="/Yetenek/YetenekSil/@a.ID" class="btn btn-danger">Sil</a></td>
+        </tr>
+    }
+
+
+
+
+</table>
+<a href="/Yetenek/YetenekEkle/" class="btn btn-danger">Yeni Yetenek Ekle</a>
+

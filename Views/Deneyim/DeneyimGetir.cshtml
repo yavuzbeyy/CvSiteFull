@@ -1,0 +1,32 @@
+﻿@model MyWebCv.Models.Entity.Experiences_Table
+
+@{
+    ViewBag.Title = "DeneyimGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h4>Deneyim Düzenleme Sayfası</h4>
+<br />
+
+<form method="post">
+    @Html.Label("Deneyim ID")
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+    <br />
+    @Html.Label("Deneyim Baslik")
+    @Html.TextBoxFor(x => x.Header, new { @class = "form-control" })
+    <br />
+    @Html.Label("Deneyim AltBaslik")
+    @Html.TextBoxFor(x => x.SecondHeader, new { @class = "form-control" })
+    <br />
+    @Html.Label("Deneyim Aciklama")
+    @Html.TextAreaFor(x => x.Explanation, new { @class = "form-control" })
+    <br />
+    @Html.Label("Deneyim Tarih")
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    <br />
+
+
+    <button class="btn btn-info">Güncelleme</button>
+</form>
+

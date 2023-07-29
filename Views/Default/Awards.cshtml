@@ -1,0 +1,14 @@
+﻿@using MyWebCv.Models.Entity
+@model List<Awards2_Table>
+
+<div class="resume-section-content">
+    <h2 class="mb-5">Certifications - Projects</h2>
+    @foreach(var item in Model) {
+    <ul class="fa-ul mb-0">
+        <li>
+            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
+            @item.Awards
+        </li>
+    </ul>
+    }
+</div>
